@@ -13,7 +13,7 @@ interface PlanetGameProps
 
 function getRandomPlanet(planets: Planet[]): Planet {
     const planet = planets[Math.floor(Math.random() * planets.length)];
-    console.log(planet);
+    console.log(planet.name);
     return planet;
 }
 
@@ -25,7 +25,6 @@ export function PlanetGame(props: PlanetGameProps)
     const [shownPlanet, setShownPlanet] = useState<Planet>(); 
     const [guess, setGuess] = useState("");
     const [message, setMessage] = useState("");
-    const [showConfettiRain, setShowConfettiRain] = useState<boolean>(false);
 
     useEffect(() => {
         if (planets.length)
@@ -43,13 +42,11 @@ export function PlanetGame(props: PlanetGameProps)
     const handleGuessButtonClick = () => {
         if (guess.toLocaleLowerCase() === shownPlanet?.name.toLocaleLowerCase())
         {
-            console.log(planets.length)
             const index = planets.indexOf(shownPlanet);
             if (index > -1)
             {
                 planets.splice(index, 1)
             }
-            console.log(planets.length)
             if (!planets.length)
             {
                 setGuess("");
@@ -59,8 +56,7 @@ export function PlanetGame(props: PlanetGameProps)
             }
             else 
             {
-                setMessage("Tillykke, du har gættet alle planeterne korrekt.")
-                setShowConfettiRain(true);
+                setMessage("Tillykke, du har gættet alle planeterne korrekt.");
             }
 
         }
