@@ -47,7 +47,7 @@ export function PlanetGame(props: PlanetGameProps)
             {
                 planets.splice(index, 1)
             }
-            if (!planets.length)
+            if (planets.length)
             {
                 setGuess("");
                 setMessage(`Det er korrekt! Der er ${planets.length} planeter tilbage. Her kommer en ny planet!`);
@@ -71,8 +71,6 @@ export function PlanetGame(props: PlanetGameProps)
     const handleGuessInputChange = (e: React.FormEvent<HTMLInputElement>) => {        
         setGuess(e.currentTarget.value)
     }
-
-    
 
     return <>
     {shownPlanet ? 

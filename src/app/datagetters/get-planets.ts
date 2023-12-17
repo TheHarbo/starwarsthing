@@ -1,9 +1,9 @@
 import _, { filter, isNaN } from "lodash";
 import { useEffect, useState } from "react";
 import { resourceLimits } from "worker_threads";
-import { checkNumber } from "../helpers/check-number";
-import { translateTerrain } from "../helpers/translate-terrain";
-import { translateClimate } from "../helpers/translate-climate";
+import { checkNumber } from "./helpers/check-number";
+import { translateTerrain } from "./helpers/translate-terrain";
+import { translateClimate } from "./helpers/translate-climate";
 
  
 export interface Planet {
@@ -120,6 +120,6 @@ export async function getPlanets(): Promise<Planet[]> {
 
   
 
-  return filteredPlanets.splice(30);
+  return filteredPlanets;
 
 }
