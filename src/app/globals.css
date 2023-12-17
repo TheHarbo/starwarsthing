@@ -3,25 +3,89 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  color: gold;
+  background-color: black;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+
+.logo-container{
+  position: relative;
+  min-width: 400px;
+  width: 20%;
+  margin: auto;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.text-container{
+  position: relative;
+  width: 80%;
+  margin: auto;
+}
+
+.header{  
+  font-size:x-large;
+  font-style: italic;
+  font-weight: 1000;
+}
+
+.link{
+  color: lightblue;
+  text-decoration: underline;
+}
+
+.paragraph{
+  position:relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.sw-input{
+  color: black;
+  text-align: center;
+}
+
+.sw-button {
+  background-color: gold;
+  border-radius: 12px;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 15px;
+  text-align: center;
+  transition: 200ms;
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.sw-button:not(:disabled):hover,
+.sw-button:not(:disabled):focus {
+  outline: 0;
+  background: yellow;
+  box-shadow: 0 0 0 2px rgba(0,0,0,.2), 0 3px 8px 0 rgba(0,0,0,.15);
+}
+
+.sw-button:disabled {
+  filter: saturate(0.2) opacity(0.5);
+  -webkit-filter: saturate(0.2) opacity(0.5);
+  cursor: not-allowed;
+}
+
+.interaction-table td{
+  margin: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+
+
+.display-table td {
+  border: 1px solid;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-left: none;
+  border-right: none;
 }

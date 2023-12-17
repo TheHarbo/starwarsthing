@@ -1,7 +1,9 @@
-import _, { isNaN } from "lodash";
-import { useEffect } from "react";
+import _, { filter, isNaN } from "lodash";
+import { useEffect, useState } from "react";
 import { resourceLimits } from "worker_threads";
 import { checkNumber } from "../helpers/check-number";
+import { translateTerrain } from "../helpers/translate-terrain";
+import { translateClimate } from "../helpers/translate-climate";
 
  
 export interface Planet {
@@ -35,21 +37,50 @@ function getPlanetsFromResultsPage(results: any)
       surface_water, 
       population} = result;
 
+
+
     const planet: Planet = {
       name: name, 
       rotationalPeriodInHours: checkNumber(rotation_period), 
       orbitalPeriodInDays: checkNumber(orbital_period), 
       diameterInKilometers: checkNumber(diameter), 
-      climate, 
+      climate: translateClimate(climate), 
       gravityStandard: checkNumber(gravity.split(" ")[0]),
-      terrain, 
+      terrain: translateTerrain(terrain), 
       percentSurfaceWater: checkNumber(surface_water), 
       population: checkNumber(population)}
-    return planet;
-
-  
+    return planet;  
   });
+
   return planets
+}
+
+function removePlanetsWithTooMuchMissingInfo(planets: Planet[]): Planet[]
+{
+  const filteredPlanets = planets.map((planet) => {
+
+    var missingInfo = 0;
+
+    Object.entries(planet).forEach(([key, value]) => {
+      if (!value || value === "unknown")
+      {
+        missingInfo = missingInfo + 1;
+      }
+    })
+
+    if (missingInfo <= 1)
+    {
+      return planet;
+    }
+    else {
+      return null;
+    }
+  }).flatMap(f => f ? [f] : []);
+
+   
+  
+  return filteredPlanets;
+
 }
 
 
@@ -85,8 +116,10 @@ export async function getPlanets(): Promise<Planet[]> {
     }    
   }
 
-  console.log({allPlanets});
+  const filteredPlanets = removePlanetsWithTooMuchMissingInfo(allPlanets);
 
-  return allPlanets;
+  
+
+  return filteredPlanets.splice(30);
 
 }
