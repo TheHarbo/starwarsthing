@@ -28,11 +28,11 @@ export function PlanetGame(props: PlanetGameProps): React.JSX.Element
     useEffect(() => {
         if (planets.length)
         {
-            setShownPlanet(getRandomPlanet(planets))
+            setShownPlanet(getRandomPlanet(planets));
         }
         else 
         {
-            setMessage("Der blev ikke fundet nogle planeter under indlæsning. Tjek din internetforbindelse.")
+            setMessage("Der blev ikke fundet nogle planeter under indlæsning. Tjek din internetforbindelse.");
         }
     }, [planets])
 
@@ -49,9 +49,9 @@ export function PlanetGame(props: PlanetGameProps): React.JSX.Element
             if (planets.length)
             {
                 setGuess("");
-                setMessage(`Det er korrekt! Der er ${planets.length} planeter tilbage. Her kommer en ny planet!`);
+                setMessage(`Det er korrekt! Der er ${planets.length} ${planets.length !== 1 ? "planeter" : "planet"} tilbage. Her kommer en ny planet!`);
                 setShownPlanet(getRandomPlanet(planets));
-                setTimeout(() => {setMessage("")}, 5000)
+                setTimeout(() => {setMessage("")}, 3000);
             }
             else 
             {
@@ -62,7 +62,7 @@ export function PlanetGame(props: PlanetGameProps): React.JSX.Element
         else
         {
             setMessage("Du gættede forkert, prøv igen");
-            setTimeout(() => {setMessage("")}, 5000)
+            setTimeout(() => {setMessage("")}, 3000);
         }
 
     }
