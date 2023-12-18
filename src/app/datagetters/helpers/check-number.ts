@@ -4,9 +4,9 @@ export function checkNumber(number: number): number {
   
     if (isNaN(parsedNumber))
     {
-      return 0
+      return 0;
     }
     else {
-      return parsedNumber
+      return parsedNumber;
     }
   }
