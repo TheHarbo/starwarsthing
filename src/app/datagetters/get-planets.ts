@@ -19,7 +19,7 @@ const PLANET_URL = `https://swapi.dev/api/planets`
 
 
 
-function getPlanetsFromResultsPage(results: any)
+function getPlanetsFromResultsPage(results: any): Planet[]
 {
   const planets: Planet[] = results.map((result: any) => {
 

@@ -16,7 +16,7 @@ function getRandomPlanet(planets: Planet[]): Planet {
     return planet;
 }
 
-export function PlanetGame(props: PlanetGameProps)
+export function PlanetGame(props: PlanetGameProps): React.JSX.Element
 {
 
     const {planets} = props;

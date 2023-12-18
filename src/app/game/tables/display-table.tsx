@@ -8,7 +8,7 @@ function capitalizeFirstLetter(string: string): string {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-export function DisplayTable(props: DisplayTableProps){
+export function DisplayTable(props: DisplayTableProps): React.JSX.Element{
     
     const {planet} = props
     

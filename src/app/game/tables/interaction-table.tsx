@@ -1,4 +1,4 @@
-import { KeyboardEvent } from "react";
+import React, { KeyboardEvent } from "react";
 
 interface InteractionTableProps{
     guess: string;
@@ -7,7 +7,7 @@ interface InteractionTableProps{
     onGuessButtonClick: () => void;
 }
 
-export function InteractionTable(props: InteractionTableProps)
+export function InteractionTable(props: InteractionTableProps): React.JSX.Element
 {
 
     const {guess, message, onGuessButtonClick, onGuessInputChange} = props;
