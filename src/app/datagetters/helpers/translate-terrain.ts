@@ -6,7 +6,7 @@ export function translateTerrain(terrain: string): string
         switch(terrain.toLocaleLowerCase().trim())
         {
             case "airless asteroid":
-                return "asteroide"
+                return "asteroide";
             case "ash":
                 return "aske";
             case "barren":
@@ -47,9 +47,9 @@ export function translateTerrain(terrain: string): string
             case "islands":
                 return "øer";
             case "lakes":
-                return "søer"   
+                return "søer";   
             case "lava rivers":
-                return "lavafloder"     
+                return "lavafloder";     
             case "jungle":
             case "jungles":
                 return "jungler";  
@@ -92,7 +92,7 @@ export function translateTerrain(terrain: string): string
             case "swamps":
                 return "moser";
             case "toxic cloudsea":
-                return "giftige tunggasser"
+                return "giftige tunggasser";
             case "tundra":
                 return "tundraer";
             case "valleys":
