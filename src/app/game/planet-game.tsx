@@ -1,8 +1,7 @@
 "use client"
 
-import React, { KeyboardEvent, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Planet } from "../datagetters/get-planets";
-import { set } from "lodash";
 import { DisplayTable } from "./tables/display-table";
 import { InteractionTable } from "./tables/interaction-table";
 
