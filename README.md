@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 # Nedhentning
 
-Klon denne repos, og start projektet med npm run dev.
+Klon denne repos, og start projektet med "npm run dev".
 
 ## Gæt en planet
 
@@ -10,4 +10,4 @@ Spillet er simpelt: du får en tabel med information på en planet. Det er op ti
 
 Du kan blive ved til at du har klaret alle planeterne.
 
-Hvis du synes at du er blevet træt af at gætten planetens navn, så kan du kigge i konsollen, navnet står der.
+Hvis du synes at du er blevet træt af at gætte planetens navn, så kan du kigge i konsollen, navnet står der.
